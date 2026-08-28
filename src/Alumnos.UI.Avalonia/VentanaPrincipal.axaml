@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Alumnos.UI.Avalonia.VentanaPrincipal"
+        Width="1000" Height="680"
+        WindowStartupLocation="CenterScreen"
+        Title="Evaluación Técnica - Analista de Aplicaciones de Software">
+  <Grid Margin="16" RowDefinitions="Auto,*,Auto,Auto,*">
+
+    <TextBlock Grid.Row="0" Text="Punto 3 - Listado de alumnos" FontWeight="Bold" Margin="0,0,0,8" />
+
+    <DataGrid Grid.Row="1" x:Name="dgvAlumnos" AutoGenerateColumns="False"
+              IsReadOnly="True" GridLinesVisibility="All" MinHeight="200">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Identificador" Binding="{Binding Identificador}" Width="120" />
+        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="200" />
+        <DataGridCheckBoxColumn Header="Activo" Binding="{Binding Activo}" Width="80" />
+        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="*" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10" Margin="0,12,0,12">
+      <Button x:Name="btnOrdenar" Content="Punto 5 - Ordenar por nombre (A-Z)" Click="BtnOrdenar_Click" />
+      <Button x:Name="btnAgregar" Content="Punto 7 - Agregar alumno..." Click="BtnAgregar_Click" />
+    </StackPanel>
+
+    <TextBlock Grid.Row="3" Foreground="Gray" Margin="0,0,0,8"
+               Text="Punto 4 - Doble clic en DISPONIBLES para pasar a SELECCIONADOS" />
+
+    <Grid Grid.Row="4" ColumnDefinitions="*,16,*">
+      <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="10">
+        <DockPanel>
+          <TextBlock DockPanel.Dock="Top" Text="DISPONIBLES" FontWeight="Bold" Margin="0,0,0,8" />
+          <ListBox x:Name="lstDisponibles" DoubleTapped="LstDisponibles_DoubleTapped" />
+        </DockPanel>
+      </Border>
+      <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="10">
+        <Grid RowDefinitions="Auto,Auto,Auto,*">
+          <TextBlock Grid.Row="0" Text="SELECCIONADOS" FontWeight="Bold" Margin="0,0,0,8" />
+          <ComboBox Grid.Row="1" x:Name="cboSeleccionados" HorizontalAlignment="Stretch"
+                    SelectionChanged="CboSeleccionados_SelectionChanged" />
+          <TextBlock Grid.Row="2" Text="Punto 6 - Descripción del alumno seleccionado" Margin="0,12,0,6" />
+          <TextBox Grid.Row="3" x:Name="txtDescripcion" IsReadOnly="True"
+                   AcceptsReturn="True" TextWrapping="Wrap" />
+        </Grid>
+      </Border>
+    </Grid>
+
+  </Grid>
+</Window>

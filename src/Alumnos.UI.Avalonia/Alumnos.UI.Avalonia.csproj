@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Alumnos.UI.Avalonia</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Alumnos.Aplicacion/Alumnos.Aplicacion.csproj" />
+    <ProjectReference Include="../Alumnos.Infraestructura/Alumnos.Infraestructura.csproj" />
+  </ItemGroup>
+</Project>

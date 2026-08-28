@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Alumnos.UI.Avalonia.VentanaNuevoAlumno"
+        Width="440" Height="340" CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Title="Punto 7 - Nuevo alumno">
+  <StackPanel Margin="16" Spacing="8">
+    <TextBlock Text="Nombre" />
+    <TextBox x:Name="txtNombre" MaxLength="100" />
+    <CheckBox x:Name="chkActivo" Content="Activo" IsChecked="True" Margin="0,4,0,4" />
+    <TextBlock Text="Descripción" />
+    <TextBox x:Name="txtDescripcion" MaxLength="250" Height="90" AcceptsReturn="True" TextWrapping="Wrap" />
+    <TextBlock x:Name="lblError" Foreground="Firebrick" Text="" />
+    <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right" Margin="0,8,0,0">
+      <Button Content="Aceptar" Click="BtnAceptar_Click" />
+      <Button Content="Cancelar" Click="BtnCancelar_Click" />
+    </StackPanel>
+  </StackPanel>
+</Window>
